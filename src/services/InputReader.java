@@ -1,14 +1,13 @@
 package services;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 public interface InputReader {
 
     /**
      * Reads the contents of the file and returns them as a String.
-     * @param inputStream The input stream to read from.
+     * @param filePath The path to the file to read.
      * @return The contents of the file as a String.
      */
-    String readFromInputStream(InputStream inputStream) throws IOException;
+    String readInput(String filePath) throws IOException;
 }

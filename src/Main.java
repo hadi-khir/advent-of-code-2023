@@ -1,4 +1,5 @@
-import dayone.DayOne;
+import calibration.Calibration;
+import cubeconundrum.CubeConundrum;
 
 import java.io.IOException;
 
@@ -6,8 +7,12 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        DayOne dayOne = new DayOne();
-        dayOne.partOne();
-        dayOne.partTwo();
+        Calibration calibration = new Calibration();
+        calibration.partOne();
+        calibration.partTwo();
+
+        CubeConundrum cubeConundrum = new CubeConundrum();
+        cubeConundrum.partOne();
+        cubeConundrum.partTwo();
     }
 }

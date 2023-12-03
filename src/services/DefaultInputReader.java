@@ -9,9 +9,13 @@ public class DefaultInputReader implements InputReader {
 
     /** {@inheritDoc} */
     @Override
-    public String readFromInputStream(InputStream inputStream) throws IOException {
+    public String readInput(String filePath) throws IOException {
+
 
         StringBuilder resultStringBuilder = new StringBuilder();
+
+        InputStream inputStream = getClass().getResourceAsStream(filePath);
+        assert inputStream != null;
         try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
 
             String line;

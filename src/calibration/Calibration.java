@@ -1,20 +1,21 @@
-package dayone;
+package calibration;
 
 import services.DefaultInputReader;
+import services.InputReader;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Scanner;
 
-public class DayOne {
+public class Calibration {
 
-    private static final String INPUT_FILE = "input.txt";
+    InputReader inputReader = new DefaultInputReader();
+    private static final String INPUT_FILE = "/calibration/input.txt";
 
     public void partOne() throws IOException {
 
         int sum = 0;
 
-        String input = getInputString();
+        String input = inputReader.readInput(INPUT_FILE);
 
         Scanner scanner = new Scanner(input);
         while (scanner.hasNextLine()) {
@@ -30,7 +31,7 @@ public class DayOne {
 
         int sum = 0;
 
-        String input = getInputString();
+        String input = inputReader.readInput(INPUT_FILE);
 
         Scanner scanner = new Scanner(input);
         while (scanner.hasNextLine()) {
@@ -50,13 +51,6 @@ public class DayOne {
         }
 
         System.out.println("Part Two: " + sum);
-    }
-
-    private String getInputString() throws IOException {
-
-        InputStream inputStream = getClass().getResourceAsStream(INPUT_FILE);
-        DefaultInputReader inputReader = new DefaultInputReader();
-        return inputReader.readFromInputStream(inputStream);
     }
 
     private int determineLineSum(String line) {
